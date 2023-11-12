@@ -19,9 +19,9 @@ public class Student {
 	private String name;
 
 	/**
-	 * The surname of the student
+	 * The npm of the student
 	 */
-	private String surname;
+	private String npm;
 
 	/**
 	 * The age of the student
@@ -91,17 +91,17 @@ public class Student {
 	}
 
 	/**
-	 * @return The surname of the student
+	 * @return The npm of the student
 	 */
-	public String getSurname() {
-		return surname;
+	public String getNpm() {
+		return npm;
 	}
 
 	/**
-	 * @param surname - The surname to set to the student
+	 * @param npm - The npm to set to the student
 	 */
-	public void setSurname(final String surname) {
-		this.surname = surname;
+	public void setNpm(final String npm) {
+		this.npm = npm;
 	}
 
 	/**

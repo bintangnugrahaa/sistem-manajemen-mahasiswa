@@ -153,7 +153,7 @@ public class ManagementViewTest {
 					.requireMessage("You can't add a student yet!\nAdd a faculty and a course first!");
 		else {
 			managementFrame.textBox("nameField").enterText("Walter");
-			managementFrame.textBox("surnameField").enterText("White");
+			managementFrame.textBox("npmField").enterText("White");
 			managementFrame.textBox("ageField").enterText("52");
 			managementFrame.textBox("startedDateField").deleteText();
 			managementFrame.textBox("startedDateField").enterText("2021-04-10");
@@ -169,7 +169,7 @@ public class ManagementViewTest {
 					.requireMessage("You can't add a student yet!\nAdd a faculty and a course first!");
 		else {
 			managementFrame.textBox("nameField").enterText("Walter");
-			managementFrame.textBox("surnameField").enterText("White");
+			managementFrame.textBox("npmField").enterText("White");
 			managementFrame.textBox("ageField").enterText("haerga");
 			managementFrame.textBox("startedDateField").deleteText();
 			managementFrame.textBox("startedDateField").enterText("2021-04-10");
@@ -186,7 +186,7 @@ public class ManagementViewTest {
 					.requireMessage("You can't add a student yet!\nAdd a faculty and a course first!");
 		else {
 			managementFrame.textBox("nameField").enterText("Walter");
-			managementFrame.textBox("surnameField").enterText("White");
+			managementFrame.textBox("npmField").enterText("White");
 			managementFrame.textBox("ageField").enterText("52");
 			managementFrame.textBox("startedDateField").deleteText();
 			managementFrame.textBox("startedDateField").enterText("hraeha");

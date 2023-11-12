@@ -180,7 +180,7 @@ public class DBHandler {
 			if (!checkIfTableExists(studentsTable)) {
 				// Creating a table of students
 				statement.executeUpdate("create table " + studentsTable + "(ID INTEGER not NULL AUTO_INCREMENT, "
-						+ " Name varchar(50), " + "Surname varchar(50), " + "Age INTEGER, " + "Gender varchar(6), "
+						+ " Name varchar(50), " + "Npm varchar(50), " + "Age INTEGER, " + "Gender varchar(6), "
 						+ "Course varchar(50), " + "Started varchar(25),  " + "Graduation varchar(25), "
 						+ "PRIMARY KEY ( id ))");
 			}
@@ -221,7 +221,7 @@ public class DBHandler {
 		try {
 			Connection connection = DriverManager.getConnection(databaseUrl, login, password);
 			PreparedStatement preparedStatement = connection.prepareStatement("insert into " + studentsTable
-					+ " (Name, Surname, Age, Gender, Course, Started, Graduation) values " + "(?, ?, ?, ?, ?, ?, ?)");
+					+ " (Name, Npm, Age, Gender, Course, Started, Graduation) values " + "(?, ?, ?, ?, ?, ?, ?)");
 
 			// Getting the duration of the course in order to calculate Graduation date
 			// field
@@ -233,7 +233,7 @@ public class DBHandler {
 			final int courseDuration = resultSet.getInt("Duration");
 
 			preparedStatement.setString(1, ManagementView.nameField.getText());
-			preparedStatement.setString(2, ManagementView.surnameField.getText());
+			preparedStatement.setString(2, ManagementView.npmField.getText());
 			preparedStatement.setInt(3, Integer.parseInt(ManagementView.ageField.getText()));
 			preparedStatement.setString(4, ManagementView.genderSelectionBox.getSelectedItem().toString());
 			preparedStatement.setString(5, ManagementView.courseSelectionBox.getSelectedItem().toString());
@@ -295,7 +295,7 @@ public class DBHandler {
 				for (currentColumn = 1; currentColumn <= howManyColumns; currentColumn++) {
 					columnData.add(resultSet.getString("ID"));
 					columnData.add(resultSet.getString("Name"));
-					columnData.add(resultSet.getString("Surname"));
+					columnData.add(resultSet.getString("Npm"));
 					columnData.add(resultSet.getString("Age"));
 					columnData.add(resultSet.getString("Gender"));
 					columnData.add(resultSet.getString("Course"));
@@ -847,7 +847,7 @@ public class DBHandler {
 							+ " where id = "
 							+ Integer.parseInt(ManagementView.table.getValueAt(selectedRow, 0).toString()));
 				} else if (selectedColumn == 2) {
-					statement.executeUpdate("update " + studentsTable + " set Surname = " + "\""
+					statement.executeUpdate("update " + studentsTable + " set Npm = " + "\""
 							+ ManagementView.table.getValueAt(selectedRow, selectedColumn).toString() + "\""
 							+ " where id = "
 							+ Integer.parseInt(ManagementView.table.getValueAt(selectedRow, 0).toString()));

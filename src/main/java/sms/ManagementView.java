@@ -52,9 +52,9 @@ public class ManagementView {
 	static JTextField nameField;
 
 	/**
-	 * The field where user should write the student's surname
+	 * The field where user should write the student's npm
 	 */
-	static JTextField surnameField;
+	static JTextField npmField;
 
 	/**
 	 * The field where user should write the student's age
@@ -76,6 +76,8 @@ public class ManagementView {
 	 * The box that allows user to select a course for a student
 	 */
 	static JComboBox courseSelectionBox;
+
+	
 
 	/**
 	 * Launch the application.
@@ -147,7 +149,7 @@ public class ManagementView {
 		tableScrollPane.setViewportView(table);
 		table.setColumnSelectionAllowed(true);
 		table.setModel(new DefaultTableModel(new Object[][] {},
-				new String[] { Translator.getValue("ID"), Translator.getValue("name"), Translator.getValue("surname"),
+				new String[] { Translator.getValue("ID"), Translator.getValue("name"), Translator.getValue("npm"),
 						Translator.getValue("age"), Translator.getValue("gender"), Translator.getValue("course"),
 						Translator.getValue("started"), Translator.getValue("graduation") }) {
 			boolean[] columnEditables = new boolean[] { false, true, true, true, true, false, false, false };
@@ -227,7 +229,7 @@ public class ManagementView {
 				}
 
 				// If one of the fields are empty warn user about that
-				if (nameField.getText().equals("") || surnameField.getText().equals("") || ageField.getText().equals("")
+				if (nameField.getText().equals("") || npmField.getText().equals("") || ageField.getText().equals("")
 						|| startedDateField.getText().equals("")) {
 
 					JOptionPane.showMessageDialog(managementFrame, Translator.getValue("fillEmptyFields"),
@@ -337,18 +339,18 @@ public class ManagementView {
 		studentPanel.add(nameField);
 		nameField.setColumns(10);
 
-		// The text that informs the user where they have to write the student's surname
-		JLabel surnameText = new JLabel(Translator.getValue("surname"));
-		surnameText.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		surnameText.setBounds(10, 54, 67, 19);
-		studentPanel.add(surnameText);
+		// The text that informs the user where they have to write the student's npm
+		JLabel npmText = new JLabel(Translator.getValue("npm"));
+		npmText.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		npmText.setBounds(10, 54, 67, 19);
+		studentPanel.add(npmText);
 
-		// Initializing surname text field
-		surnameField = new JTextField();
-		surnameField.setName("surnameField");
-		surnameField.setColumns(10);
-		surnameField.setBounds(85, 51, 143, 22);
-		studentPanel.add(surnameField);
+		// Initializing npm text field
+		npmField = new JTextField();
+		npmField.setName("npmField");
+		npmField.setColumns(10);
+		npmField.setBounds(85, 51, 143, 22);
+		studentPanel.add(npmField);
 
 		// The text that informs the user where they have to write the student's age
 		JLabel ageText = new JLabel(Translator.getValue("age"));

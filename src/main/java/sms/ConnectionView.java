@@ -44,7 +44,7 @@ public class ConnectionView {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				// Reading messages in dependance of the selected language(by default ENG)
-				Translator.setLanguage(Language.ENG);
+				Translator.setLanguage(Language.EN);
 				Translator.getMessagesFromXML();
 
 				try {
@@ -133,7 +133,7 @@ public class ConnectionView {
 			public void actionPerformed(ActionEvent e) {
 				Language selectedLanguage = (Language) JOptionPane.showInputDialog(null, Translator.getValue("sms"),
 						Translator.getValue("selectLanguage"), JOptionPane.QUESTION_MESSAGE, null, Language.values(),
-						Language.ENG.toString());
+						Language.EN.toString());
 
 				if (selectedLanguage != null)
 					Translator.setLanguage(selectedLanguage);

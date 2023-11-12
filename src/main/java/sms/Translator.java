@@ -19,7 +19,7 @@ import org.w3c.dom.NodeList;
  *
  */
 enum Language {
-	ENG, RU, RO
+	EN, ID
 }
 
 /**
@@ -40,7 +40,7 @@ public class Translator {
 
 	static {
 		messages = new HashMap<String, String>();
-		setLanguage(Language.ENG);
+		setLanguage(Language.EN);
 	}
 
 	/**
